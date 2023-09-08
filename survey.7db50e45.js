@@ -231,6 +231,7 @@ function _sendJSON() {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          _context.prev = 0;
           return _context.abrupt("return", fetch(url, {
             method: "POST",
             // *GET, POST, PUT, DELETE, etc.
@@ -249,11 +250,15 @@ function _sendJSON() {
             // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
             body: data // body data type must match "Content-Type" header
           }));
-        case 1:
+        case 4:
+          _context.prev = 4;
+          _context.t0 = _context["catch"](0);
+          console.log("failed thing");
+        case 7:
         case "end":
           return _context.stop();
       }
-    }, _callee);
+    }, _callee, null, [[0, 4]]);
   }));
   return _sendJSON.apply(this, arguments);
 }
@@ -269,6 +274,9 @@ function sendAllData(redirection_target, is_first) {
   // sendJSON(localStorage.getItem("comparisonB"))
   ]).then(function (values) {
     return window.location.assign(redirection_target + window.location.search);
+  }).catch(function (values) {
+    console.log("network error, could not submit");
+    window.location.assign(redirection_target + window.location.search);
   });
 }
 function sendFeedback(redirection_target) {
@@ -366,7 +374,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60919" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60947" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
