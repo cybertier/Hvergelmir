@@ -339,5 +339,30 @@
   margin-left: 10px;
   width : 40%;
 }
+.answer-grid{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 3fr 0.8fr 0.8fr;
+  gap:1px;
+}
+
+.extra-label{
+  margin-right: 20px;
+}
+.extra-rowitem{
+  margin-top: 15px;
+}
+.extra-main{
+  padding: 20px
+}
+
+.extra-div{
+  gap: min(1.5%, 35px);
+  padding: min(1.5%, 15px);
+  padding-left:min(2.5%, 25px);
+  padding-right: min(2.5%, 25px);
+  background-color: #181c20;
+  max-width: 1500px;
+}
 
 /*# sourceMappingURL=/styles.dd855970.css.map */

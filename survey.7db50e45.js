@@ -270,13 +270,11 @@ function sendAllData(redirection_target, is_first) {
   // sendJSON(localStorage.getItem("comparisonB"))
   ]).then(function (values) {
     return window.location.assign(redirection_target + window.location.search);
-  }); //.catch((values) =>{
-  //   console.log("network error, could not submit");
-  //   window.location.assign(redirection_target + window.location.search);
-  // }
-  //);
+  }).catch(function (values) {
+    console.log("network error, could not submit");
+    window.location.assign(redirection_target + window.location.search);
+  });
 }
-
 function sendFeedback(redirection_target) {
   console.log("sending feedback");
   Promise.all([
@@ -311,6 +309,9 @@ function saveAndGenID(e, type, redirection_target, is_first) {
 }
 function saveAndSendData(e, type, redirection_target, is_first) {
   saveData(e, type, redirection_target, is_first, false, true);
+  if (is_first == "first") {
+    saveAnswer();
+  }
   sendAllData(redirection_target, is_first);
 }
 function saveAndSendFeedback(e, type, redirection_target, is_first) {
@@ -339,10 +340,13 @@ function saveData(e, type, redirection_target, is_first) {
   fromEntries.id = cookies.id;
   fromEntries.time = is_first;
   fromEntries.type = type;
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  if (type == "personal") {
+    fromEntries.ref = fromEntries.browser = urlParams.get("ref");
+  }
   if (addBrowser) {
-    var queryString = window.location.search;
-    var _urlParams = new URLSearchParams(queryString);
-    fromEntries.browser = _urlParams.get("p");
+    fromEntries.browser = urlParams.get("p");
     console.log("adding browser");
     console.log(fromEntries.browser);
   }
@@ -354,6 +358,13 @@ function saveData(e, type, redirection_target, is_first) {
   if (redirect) {
     window.location.href = redirection_target;
   }
+}
+function saveAnswer() {
+  var form = document.forms.survey1;
+  var formData = new FormData(form);
+  var fromEntries = Object.fromEntries(formData);
+  var formJson = JSON.stringify(fromEntries);
+  localStorage.setItem("firstanswer", formJson);
 }
 window.saveData = saveData;
 window.scramble_questions = scramble_questions;
@@ -387,7 +398,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58324" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50977" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
