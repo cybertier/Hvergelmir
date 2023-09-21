@@ -259,6 +259,40 @@
   background-color: #181c20;
 }
 
+.cosmos{
+  position: relative;
+  height:90%;
+  overflow: hidden;
+}
+.graphCanvas{
+  height :100%;
+}
+
+.legend-svg{
+  height: 100%;
+  width:100%;
+}
+.legend{
+  padding: 15px;
+  padding-bottom: 12px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  margin-top: 15px;
+  width: 800px;
+  height:70px;
+
+  text-align: center;
+}
+
+
+@media (orientation: portrait){
+  .legend{
+    height:8%;
+    display: inline-block;
+    padding: 15px;
+  }
+}
 
 
 .graph-explanation-image{
@@ -299,8 +333,6 @@
   padding-right: 30%;
   margin-top: 2em;
 }
-
-
 
 
 @media (orientation: portrait){
