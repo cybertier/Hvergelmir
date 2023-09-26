@@ -320,7 +320,8 @@ function saveAndSendFeedback(e, type, redirection_target, is_first) {
 }
 function onToggleConsent(element) {
   if (element.checked) {
-    alert("Ihre Daten können nicht verwendet werden wenn sie Ihre zustimmung zurück nehmen!");
+    var answer = confirm("Wollen sie ihre Zustimmung wirklich zurück nehmen? Ihre Daten können ohne ihre Zustimmung nicht verwendet werden");
+    element.checked = answer;
   }
 }
 function saveData(e, type, redirection_target, is_first) {
@@ -398,7 +399,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52242" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
