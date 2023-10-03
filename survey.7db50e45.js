@@ -257,6 +257,11 @@ function _sendJSON() {
   }));
   return _sendJSON.apply(this, arguments);
 }
+function delay(time) {
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, time);
+  });
+}
 function sendAllData(redirection_target, is_first) {
   console.log("sending all");
   Promise.all([
@@ -272,7 +277,9 @@ function sendAllData(redirection_target, is_first) {
     return window.location.assign(redirection_target + window.location.search);
   }).catch(function (values) {
     console.log("network error, could not submit");
-    window.location.assign(redirection_target + window.location.search);
+    delay(1000).then(function () {
+      return window.location.assign(redirection_target + window.location.search);
+    });
   });
 }
 function sendFeedback(redirection_target) {
@@ -281,6 +288,11 @@ function sendFeedback(redirection_target) {
   //send personal
   sendJSON(localStorage.getItem("feedback"))]).then(function (values) {
     return window.location.assign(redirection_target + window.location.search);
+  }).catch(function (values) {
+    console.log("network error, could not submit");
+    delay(1000).then(function () {
+      return window.location.assign(redirection_target + window.location.search);
+    });
   });
 }
 function saveDataAndSend(e, type, redirection_target, is_first) {
@@ -399,7 +411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52242" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56380" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
