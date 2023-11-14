@@ -8,46 +8,49 @@
 </head>
 <body class="body">
   <script src="static/js/survey.js"></script>
-  <div class="form-display-div">
-    <div class="light-unbordered question">
-      <h2>Umfrage</h2>
-      <form onsubmit="saveAndSendData(event, 'comparison', 'graph.html', 'first')" id="survey1" name="survey1">
-        <p>Versuchen Sie die folgenden Werte zu schätzen.</p>
-        <div class="line-color">
-          <div class="form-grid-2">
-            <div class="row-elem">
-              <label for="q1" id="q1l" class="form-label">Q1</label>
-            </div>
-            <div class="row-elem">
-              <input type="number" class="estimation-box" min="0" id="q1" name="radio_1">
-            </div>
-            <div class="row-elem">
-              <label for="q2" id="q2l" class="form-label">Q2</label>
-            </div>
-            <div class="row-elem">
-              <input type="number" class="estimation-box" min="0" id="q2" name="radio_2">
-            </div>
-            <div class="row-elem">
-              <label for="q3" id="q3l" class="form-label">Q3</label>
-            </div>
-            <div class="row-elem">
-              <input type="number" class="estimation-box" min="0" id="q3" name="radio_3">
-            </div>
-            <div class="row-elem">
-              <label for="q4" id="q4l" class="form-label">Q4</label>
-            </div>
-            <div class="row-elem">
-              <input type="number" class="estimation-box" min="0" id="q4" name="radio_4">
-            </div>
-            <div class="row-elem">
-              <label for="q5" id="q5l" class="form-label">Q5</label>
-            </div>
-            <div class="row-elem">
-              <input type="number" class="estimation-box" min="0" id="q5" name="radio_5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm mx-1 p-3 light-bordered">
+        <h1>Umfrage</h1>
+        <form onsubmit="saveAndSendData(event, 'comparison', 'graph.html', 'first')" id="survey1" name="survey1">
+          <p>Versuchen Sie die folgenden Werte zu schätzen.</p>
+          <div class="line-color">
+            <div class="form-grid-2">
+              <div class="row-elem">
+                <label for="q1" id="q1l" class="form-label">Q1</label>
+              </div>
+              <div class="row-elem">
+                <input type="number" class="estimation-box" min="0" id="q1" name="radio_1">
+              </div>
+              <div class="row-elem">
+                <label for="q2" id="q2l" class="form-label">Q2</label>
+              </div>
+              <div class="row-elem">
+                <input type="number" class="estimation-box" min="0" id="q2" name="radio_2">
+              </div>
+              <div class="row-elem">
+                <label for="q3" id="q3l" class="form-label">Q3</label>
+              </div>
+              <div class="row-elem">
+                <input type="number" class="estimation-box" min="0" id="q3" name="radio_3">
+              </div>
+              <div class="row-elem">
+                <label for="q4" id="q4l" class="form-label">Q4</label>
+              </div>
+              <div class="row-elem">
+                <input type="number" class="estimation-box" min="0" id="q4" name="radio_4">
+              </div>
+              <div class="row-elem">
+                <label for="q5" id="q5l" class="form-label">Q5</label>
+              </div>
+              <div class="row-elem">
+                <input type="number" class="estimation-box" min="0" id="q5" name="radio_5">
+              </div>
             </div>
           </div>
-        </div><button type="submit" class="btn btn-primary">Abgeben</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Weiter</button>
+        </form>
+      </div>
     </div>
   </div>
   <script>
