@@ -12,7 +12,7 @@
     <div class="light-unbordered question">
       <h2>Umfrage</h2>
       <form onsubmit="saveAndSendData(event, 'comparison', 'graph.html', 'first')" id="survey1" name="survey1">
-        <p>Schätzen Sie bitte grob diese zahlen:</p>
+        <p>Versuchen Sie die folgenden Werte zu schätzen.</p>
         <div class="line-color">
           <div class="form-grid-2">
             <div class="row-elem">
@@ -51,7 +51,7 @@
     </div>
   </div>
   <script>
-  var e=["Wie viele Menschen direkt an dem Browser Programmiert haben:","Wie viele Menschen an dem Browser und an allen Bauteilen in der Lieferkette Programmiert haben:","Aus wie vielen Bauteilen die Lieferkette des Browsers besteht:","Wie oft am tag Änderungen an Teilen der Lieferkette des Browsers vorgenommen werden:","Aus wie vielen Ländern Entwickler kommen, die an einem Teil der Lieferkette des Browsers arbeiten:"],r=["comparison1","comparison2","comparison3","comparison4","comparison5"];scramble_questions(e,r,"compar_shuffled");
+  var e=["Wie viele Personen direkt an dem Webbrowser programmieren:","Wie viele Personen insgesamt am Webbrowser programmieren (inkl. aller Softwarebauteile in seiner Softwarelieferkette):","Aus wie vielen Softwarebauteilen die Softwarelieferkette des Webbrowsers besteht:","Wie oft es am Tag zu Änderungen an Softwarebauteilen des Webbrowsers kommt:","Aus wie vielen Ländern die Entwickler des gesamten Softwarelieferkette stammen:"],r=["comparison1","comparison2","comparison3","comparison4","comparison5"];scramble_questions(e,r,"compar_shuffled");
   </script>
 </body>
 </html>

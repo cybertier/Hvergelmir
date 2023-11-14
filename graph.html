@@ -21,13 +21,13 @@
       <div class="graph-lower light-bordered sidebar-right">
         <h3>Lieferketten Info</h3>
         <p><var id="depth-button-label"></var></p>
-        <p>Es werden Bauteile angezeigt, die bis zu <var id="current_depth_var"></var> Bauteile von <a id="browser"></a> entfernt sind.</p>
-        <p>Genau so weit <a id="sind">ist</a> <var id="current_separate_dependencies_var"></var> <a id="bauteil">Bauteil</a> davon entfernt.</p>
-        <p>Gesamt <a id="sind2">ist</a> bis hier <var id="current_aggregate_dependencies_var"></var> <a id="bauteil2">Bauteil</a> in der Lieferkette.</p>
+        <p>Es werden Softwarebauteile angezeigt, die bis zu <var id="current_depth_var"></var> Ebenen von <a id="browser"></a> entfernt sind.</p>
+        <p>Auf dieser Ebene <a id="sind">ist</a> <var id="current_separate_dependencies_var"></var> <a id="bauteil">Softwarebauteil</a> vorhanden.</p>
+        <p>Insgesamt <a id="sind2">ist</a> bis hier hin <var id="current_aggregate_dependencies_var"></var> <a id="bauteil2">Softwarebauteil</a> in der Softwarelieferkette enthalten.</p>
         <p>Bis hier sind Angestellte von <var id="companies_total"></var> Firmen an der Entwicklung beteiligt.</p>
-        <p>Es waren allein im letzten Jahr ~<var id="contributors_year_accumulated"></var> Menschen an diesen Bauteilen Beteiligt.</p>
-        <p>Täglich werden im Durchschnitt <var id="commits_year_accumulated"></var> Änderungen an ihnen vorgenommen.</p>
-        <p>So sind die Entwickler in den momentan angezeigten Bauteilen auf der Welt verteilt:</p>
+        <p>Es waren allein im letzten Jahr ~<var id="contributors_year_accumulated"></var> Menschen an der Entwicklung dieser Softwarebauteilen beteiligt.</p>
+        <p>Täglich werden im Durchschnitt <var id="commits_year_accumulated"></var> Änderungen an den Softwarebauteilen vorgenommen.</p>
+        <p>So sind die Entwickler in den momentan angezeigten Softwarebauteilen auf der Welt verteilt:</p>
         <div class="choropleth-div" id="choropleth-div">
           <svg id="my_dataviz" width="450" height="320"></svg>
         </div>
