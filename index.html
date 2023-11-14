@@ -1,63 +1,31 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark">
 <head>
-  <meta charset="UTF-8">
   <title>Hvergelmir</title>
+  <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="">
   <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="stylesheet" href="static/css/graph-explanation-styles.css">
 </head>
 <body class="body">
-  <script>
-  function e(e){e.preventDefault();var o=Math.floor(1e15*Math.random());document.cookie="id="+o+"; SameSite=Strict",document.cookie="compre_shuffled=false; SameSite=Strict",document.cookie="compar_shuffled=false; SameSite=Strict",localStorage.clear(),console.log(document.cookie);var t=document.forms.survey1,r=new FormData(t),a=Object.fromEntries(r);console.log(a),a.id=o,a.time="first",a.type="personal";var c=JSON.stringify(a);localStorage.setItem("personal",c),window.location.href="survey_pre_compre.html"}
-  </script> 
-  <script src="static/js/survey.js"></script>
-  <div class="form-display-div">
-    <div class="light-unbordered question">
-      <h2>Umfrage</h2>
-      <p>In dieser Umfrage geht es darum, wie gut Laien Software-Lieferketten verstehen und ob Sie von dieser Webseite effektiv erklärt und dargestellt werden.</p>
-      <p>Diese Umfrage ist anonym, es werden keine Daten außer den Eingaben vom Nutzer und ggf. dem referral link gespeichert, damit es nicht möglich ist, die Antworten spezifischen Personen zuzuordnen.</p>
-      <p>Durch das Klicken auf "Abgeben" stimmen sie zu, dass ihre Daten im Sinne der Umfrage verwendet werden dürfen. Sollten sie sich umentscheiden, können sie ihre Zustimmung am Ende der Umfrage zurücknehmen.</p>
-      <form onsubmit="saveAndGenID(event, 'personal', 'survey_pre_compre.html', 'true')" action="http://localhost:5555" method="post" id="survey1" name="survey1">
-        <div class="line-color">
-          <div class="form-grid-2">
-            <div class="row-elem">
-              <label class="form-label" for="personal3">Geschlecht</label>
-            </div>
-            <div class="row-elem">
-              <div class="gender-scale">
-                <label class="btn btn-default btn-lg">Männlich<br>
-                <input class="form-check-input likert-radio" value="M" type="radio" name="radio_1" id="radio1_1"></label> <label class="btn btn-default btn-lg">Weiblich<br>
-                <input class="form-check-input likert-radio" value="W" type="radio" name="radio_1" id="radio1_2"></label> <label class="btn btn-default btn-lg">Divers<br>
-                <input class="form-check-input likert-radio" value="D" type="radio" name="radio_1" id="radio1_3"></label>
-              </div>
-            </div>
-            <div class="row-elem">
-              <label class="form-label" for="personal1">Alter</label>
-            </div>
-            <div class="row-elem">
-              <div class="likert-scale">
-                <p><label class="btn btn-default btn-lg">&amp;lt18</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="1" type="radio" name="radio_2" id="radio1_1"></label>
-                <p><label class="btn btn-default btn-lg">18-30</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="2" type="radio" name="radio_2" id="radio1_2"></label>
-                <p><label class="btn btn-default btn-lg">31-45</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="3" type="radio" name="radio_2" id="radio1_3"></label>
-                <p><label class="btn btn-default btn-lg">46-65</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="4" type="radio" name="radio_2" id="radio1_4"></label>
-                <p><label class="btn btn-default btn-lg">65&lt;</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="5" type="radio" name="radio_2" id="radio1_5"></label>
-              </div>
-            </div>
-            <div class="row-elem">
-              <label class="form-label" for="personal2">Wie viele Tage benutzen sie in der Woche im Schnitt einen Computer?</label>
-            </div>
-            <div class="row-elem">
-              <div class="likert-scale">
-                <p><label class="btn btn-default btn-lg">0</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="1" type="radio" name="radio_3" id="radio1_1"></label>
-                <p><label class="btn btn-default btn-lg">1</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="2" type="radio" name="radio_3" id="radio1_2"></label>
-                <p><label class="btn btn-default btn-lg">2-3</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="3" type="radio" name="radio_3" id="radio1_3"></label>
-                <p><label class="btn btn-default btn-lg">4-5</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="4" type="radio" name="radio_3" id="radio1_4"></label>
-                <p><label class="btn btn-default btn-lg">6-7</label></p><label class="btn btn-default btn-lg"><input class="form-check-input likert-radio" value="5" type="radio" name="radio_3" id="radio1_5"></label>
-              </div>
-            </div>
-          </div>
-        </div><button type="submit" class="btn btn-primary">Abgeben</button>
-      </form><a href="survey_pre_compre.html"></a> <a href="survey_pre_compar2.html"></a> <a href="survey_post_compar2.html"></a> <a href="survey_post_compre.html"></a> <a href="graph-explanation.html"></a> <a href="About.html"></a> <a href="examples.html"></a> <a href="graph-live.html"></a> <a href="survey_post_feedback.html"></a> <a href="etwas.html"></a>
+  <div class="graph-explanation-div">
+    <div class="graph-explanation-left-column">
+      <div class="explanation-left-box light-bordered">
+        <h1>Lieferketten</h1>
+        <p>Lieferketten entstehen, wenn viele Firmen in den Prozess der Produktion einbezogen sind, von Rohstoffen bis zum fertigen Produkt.</p>
+        <p>Eine Firma könnte alles alleine herstellen, aber oft erfordert die Herstellung eines Produktes die Zusammenarbeit mehrerer Firmen. Zum Beispiel könnte eine Firma die Gangschaltung für ein Fahrrad herstellen, eine andere die Laufräder, und weitere Firmen kümmern sich um andere Bauteile oder Ressourcen wie Gummi für die Reifen.</p>
+        <p>Der Fahrradhersteller produziert nur einige wenige Bauteile selbst und bezieht die restlichen von anderen Unternehmen, die wiederum ihre Bauteile von weiteren Unternehmen beziehen können. So können komplexe Beziehungen zwischen verschiedenen Bauteilen und Firmen in verschiedenen Ländern entstehen.</p>
+        <h2>Softwarelieferketten</h2>
+        <p>Auch bei Software ist es oft einfacher, existierende Bauteile zu nutzen, statt selbst welche zu programmieren. Dadurch entstehen komplexe Netzwerke aus Softwarebauteilen von verschiedenen Herstellern. In solchen Softwarelieferketten ist es manchmal schwer zu erkennen, von welchen Herstellern die Softwarebauteile stammen oder wo sie überhaupt verbaut sind. Dennoch muss geprüft werden, ob alle wichtigen Teile sicher sind.</p>
+        <p>Ein einziges fehlerhaftes oder bösartiges Teil kann die Sicherheit des Programms gefährden, ähnlich wie bei einem Auto auf der Autobahn, wenn eine Schraube bricht. Diese Arbeit untersucht Softwarelieferketten, die komplexe Netzwerke aus solchen Softwarebauteilen bilden.</p>
+        <h2>Darstellung als Graphen</h2>
+        <p>Im Beispiel wird die Lieferkette eines fiktiven Schokoladenkuchens dargestellt. Die Zutaten sind als Punkte dargestellt und ihre Beziehungen untereinander werden durch Linien gezeigt. Beispielsweise wird gezeigt, dass Zucker für den Kuchen benötigt wird. Der Kuchen wird in Gelb dargestellt und alle Zutaten in verschiedenen Orangetönen. Je mehr "Schritte" zwischen dem Kuchen und einer Zutat sind, also je weiter weg die Zutat in der Lieferkette vom fertigen Kuchen ist, desto heller ist die Farbe der Zutat.</p>
+        <p>Die Größe der Punkte in der Softwarelieferkette hängt davon ab, wie oft das Softwarebauteil verwendet wird und wie viele Menschen daran mitgearbeitet haben.</p>
+      </div>
+      <div class="explanation-right-box">
+        <div class="dark-bordered info-main"><img src="static/img/graph-example.png" alt="" class="graph-explanation-image"></div><a class="btn btn-primary example-button" href="examples.html" role="button">
+        <h1>Weiter zu den Softwarelieferketten-Beispielen</h1></a>
+      </div>
     </div>
   </div>
 </body>
