@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="static/css/graph-explanation-styles.css">
 </head>
 <body class="body">
+  <script>
+      var o = Math.floor(1e15 * Math.random());
+      document.cookie = "id=" + o + "; SameSite=Strict", document.cookie = "compre_shuffled=false; SameSite=Strict", document.cookie = "compar_shuffled=false; SameSite=Strict", localStorage.clear(), console.log(document.cookie);
+      var t = document.forms.survey1,
+          r = new FormData(t),
+          a = Object.fromEntries(r);
+      console.log(a), a.id = o, a.time = "first", a.type = "personal";
+      var c = JSON.stringify(a);
+      localStorage.setItem("personal", c)
+  </script>
+  <script src="static/js/survey.js"></script>
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm mx-1 p-3 light-bordered">
